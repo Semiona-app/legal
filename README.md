@@ -50,4 +50,8 @@ npx serve out      # preview the export
 
 ## Deploy
 
-Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds the static export and publishes it to **GitHub Pages**. The workflow sets `NEXT_PUBLIC_BASE_PATH=/legal` so asset paths resolve under the project-pages URL. For a custom domain (e.g. `legal.semiona.com`), leave `NEXT_PUBLIC_BASE_PATH` unset and add a `CNAME`.
+Hosted on the Semiona **Dokploy** server and served at **https://legal.semiona.com** (auto-SSL via Let's Encrypt).
+
+The `Dockerfile` builds the static export and serves it with a tiny nginx (`nginx.conf` maps clean URLs like `/privacy` onto the exported `/privacy.html`). Dokploy is pointed at this repo (`main`), builds the image, and routes `legal.semiona.com` to it. No `NEXT_PUBLIC_BASE_PATH` is set, so the site lives at the domain root.
+
+To deploy: push to `main` (Dokploy auto-deploys) or trigger a redeploy in the Dokploy app. Build it locally with `docker build -t semiona-legal . && docker run -p 8080:80 semiona-legal`.
