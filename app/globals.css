@@ -193,7 +193,11 @@ h1, h2, h3, h4 { font-weight: 700; line-height: 1.4; text-wrap: balance; color: 
   display: flex; align-items: center; justify-content: space-between; gap: 18px;
 }
 .brand { display: inline-flex; align-items: center; gap: 10px; }
-.brand-mark { width: 24px; height: auto; }
+.brand-mark {
+  width: 28px; height: 28px; border-radius: 7px;
+  object-fit: cover; display: block;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.28);
+}
 .brand-word {
   font-family: var(--font-poppins), sans-serif;
   font-weight: 700; font-size: 1.08rem; letter-spacing: 0.05em; color: var(--ink);

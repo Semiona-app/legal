@@ -2,16 +2,6 @@ import type { SVGProps } from "react";
 
 type P = SVGProps<SVGSVGElement>;
 
-/* Semiona mark — the app's paper-plane logo, brand colors. */
-export const IcLogo = (p: P) => (
-  <svg viewBox="0 0 24 24" aria-hidden="true" {...p}>
-    <path d="M4.3 2.9c-.4.2-.6.6-.6 1.1v16c0 .5.2.9.6 1.1l8.9-9.1-8.9-9.1Z" fill="#39D0FF" />
-    <path d="m16.2 9.1-3-1.7-8.9-5c.2-.1.5-.1.8 0l11.1 6.2v.5Z" fill="#5ECB5C" />
-    <path d="M4.3 21.1c.2.1.5.1.8 0l11.1-6.2-3-3-8.9 9.2Z" fill="#FF5A5A" />
-    <path d="m19.7 10.9-3.5-2-3 3.1 3 3 3.5-2c1-.5 1-1.6 0-2.1Z" fill="#FEC35B" />
-  </svg>
-);
-
 export const IcSun = (p: P) => (
   <svg viewBox="0 0 24 24" aria-hidden="true" {...p}>
     <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" strokeWidth="1.8" />

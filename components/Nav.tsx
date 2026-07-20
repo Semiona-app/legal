@@ -1,12 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useLang } from "@/components/LangContext";
 import LangToggle from "@/components/LangToggle";
 import ThemeToggle from "@/components/ThemeToggle";
-import { IcLogo } from "@/components/icons";
+import { asset } from "@/lib/config";
 
 const LINKS = [
   { href: "/privacy", key: "nav.privacy" as const },
@@ -40,7 +41,14 @@ export default function Nav() {
     <header className={`nav${scrolled ? " is-scrolled" : ""}`}>
       <div className="nav-inner">
         <Link className="brand" href="/" aria-label="Semiona">
-          <IcLogo className="brand-mark" />
+          <Image
+            className="brand-mark"
+            src={asset("/img/app-icon.png")}
+            alt="Semiona"
+            width={28}
+            height={28}
+            priority
+          />
           <span className="brand-word" aria-hidden="true">
             SEMI<em>O</em>NA
           </span>
